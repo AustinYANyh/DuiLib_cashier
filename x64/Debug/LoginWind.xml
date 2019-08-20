@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Window size="699,351" sizebox="4,4,4,4" caption="0,0,0,32">
+    <VerticalLayout width="699" height="351" bkimage="untitled.bmp">
+        <HorizontalLayout width="699" height="351">
+            <Button name="btnClose" float="true" pos="662,4,0,0" width="30" height="29" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" normalimage="关闭.png" pushedimage="选中关闭.png" focusedimage="关闭.png" />
+            <Button name="btnMin" float="true" pos="623,4,0,0" width="32" height="29" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" normalimage="最小化.png" pushedimage="选中最小化.png" focusedimage="最小化.png" />
+            <Button name="btnLogin" text="登录" shortcut="ENTER" float="true" pos="321,265,0,0" width="89" height="38" bkcolor="#FF00FFFF" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" />
+            <Edit name="edtLogin" tooltip="请输入用户名" float="true" pos="282,127,0,0" width="198" height="34" bkcolor="#FFFFFFFF" textpadding="4,3,4,3" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" />
+            <Edit name="edtPassword" tooltip="请输入密码" float="true" pos="282,180,0,0" width="198" height="32" bkcolor="#FFFFFFFF" textpadding="4,3,4,3" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" password="true" />
+            <Button float="true" pos="225,128,0,0" width="33" height="30" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" normalimage="用户名.png" />
+            <Button float="true" pos="225,180,0,0" width="33" height="30" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" normalimage="密码.png" />
+        </HorizontalLayout>
+    </VerticalLayout>
+</Window>

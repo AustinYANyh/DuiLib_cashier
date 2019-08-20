@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Window size="1002,642" sizebox="4,4,4,4" caption="0,0,0,32">
+    <VerticalLayout width="1002" height="642" bkimage="主界面.bmp" bkcolor="#FF00FFFF">
+        <HorizontalLayout width="1000" height="33" bkcolor="#FF00FFFF">
+            <Button name="btnClose" float="true" pos="960,2,0,0" width="36" height="27" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" normalimage="关闭.png" pushedimage="选中关闭.png" focusedimage="关闭.png" />
+            <Button name="btnMin" float="true" pos="918,2,0,0" width="36" height="27" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" normalimage="最小化.png" pushedimage="选中最小化.png" focusedimage="最小化.png" />
+        </HorizontalLayout>
+        <Edit name="ediGoodname" float="true" pos="132,52,0,0" width="100" height="37" bkcolor="#FFFFFFFF" textpadding="4,3,4,3" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" />
+        <Edit name="ediGoodCount" float="true" pos="368,52,0,0" width="63" height="37" bkcolor="#FFFFFFFF" textpadding="4,3,4,3" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" />
+        <Edit name="ediCount" text="0" float="true" pos="582,52,0,0" width="67" height="37" bkcolor="#FFFFFFFF" textpadding="4,3,4,3" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" />
+        <List name="ListGoodInfo" float="true" pos="16,108,0,0" itemalign="center" width="900" height="452" itemtextcolor="#FF000000" itemselectedtextcolor="#FF000000" itemselectedbkcolor="#FFC1E3FF" itemhottextcolor="#FF000000" itemhotbkcolor="#FFE9F5FF" itemdisabledtextcolor="#FFCCCCCC" itemdisabledbkcolor="#FFFFFFFF" headerbkimage="List/list_header_bg.png">
+            <ListHeader name="domain" bkimage="List/list_header_bg.png">
+                <ListHeaderItem name="goodName" text="商品名称" width="144" height="23" minwidth="16" textcolor="#FF000000" sepwidth="1" align="center" hotimage="List/list_header_hot.png" pushedimage="List/list_header_pushed.png" sepimage="List/list_header_sep.png" />
+                <ListHeaderItem name="Money" text="价格" width="144" height="23" minwidth="16" textcolor="#FF000000" sepwidth="1" align="center" hotimage="List/list_header_hot.png" pushedimage="List/list_header_pushed.png" sepimage="List/list_header_sep.png" />
+                <ListHeaderItem name="Count" text="数量" width="144" height="23" minwidth="16" textcolor="#FF000000" sepwidth="1" align="center" hotimage="List/list_header_hot.png" pushedimage="List/list_header_pushed.png" sepimage="List/list_header_sep.png" />
+                <ListHeaderItem name="CountKind" text="单位" width="144" height="23" minwidth="16" textcolor="#FF000000" sepwidth="1" align="center" hotimage="List/list_header_hot.png" pushedimage="List/list_header_pushed.png" sepimage="List/list_header_sep.png" />
+                <ListHeaderItem name="Total" text="合计" width="144" height="23" minwidth="16" textcolor="#FF000000" sepwidth="1" align="center" hotimage="List/list_header_hot.png" pushedimage="List/list_header_pushed.png" sepimage="List/list_header_sep.png" />
+            </ListHeader>
+        </List>
+        <Label text="输入商品名称:" float="true" pos="20,57,0,0" width="97" height="28" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" />
+        <Label text="库存剩余数量:" float="true" pos="251,57,0,0" width="97" height="28" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" />
+        <Button name="btn_Select" text="查询" float="true" pos="451,52,0,0" width="62" height="37" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" pushedimage="按钮选中.png" />
+        <Button name="btn_Add" text="+" float="true" pos="551,58,0,0" width="25" height="29" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" pushedimage="按钮选中.png" />
+        <Button name="btn_Sub" text="-" float="true" pos="657,58,0,0" width="25" height="29" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" pushedimage="按钮选中.png" />
+        <Label text="合计:" float="true" pos="79,583,0,0" width="44" height="40" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" />
+        <Edit name="ediTotal" float="true" pos="134,583,0,0" width="121" height="40" bkcolor="#FFFFFFFF" textpadding="4,3,4,3" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" />
+        <Button name="btn_Yes" text="确认输出" float="true" pos="489,585,0,0" width="84" height="38" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" pushedimage="按钮选中.png" />
+        <Button name="btn_No" text="取消输出" float="true" pos="595,585,0,0" width="84" height="38" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" pushedimage="按钮选中.png" />
+        <Button name="btn_Ok" text="OK" float="true" pos="720,52,0,0" width="62" height="37" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" pushedimage="按钮选中.png" />
+    </VerticalLayout>
+</Window>

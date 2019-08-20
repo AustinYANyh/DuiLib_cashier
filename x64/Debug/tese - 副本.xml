@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Window size="1002,642" sizebox="4,4,4,4" caption="0,0,0,32">
+    <VerticalLayout width="1002" height="642" bkimage="主界面.bmp" bkcolor="#FF00FFFF">
+        <HorizontalLayout width="1001" height="33" bkcolor="#FF00FFFF">
+            <Button name="btnClose" float="true" pos="967,2,0,0" width="36" height="27" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" normalimage="关闭.png" pushedimage="选中关闭.png" focusedimage="关闭.png" />
+            <Button name="btnMin" float="true" pos="925,2,0,0" width="36" height="27" bkcolor="#FF00FFFF" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" normalimage="最小化.png" pushedimage="选中最小化.png" focusedimage="最小化.png" />
+        </HorizontalLayout>
+        <HorizontalLayout width="1001" height="49">
+            <Option name="optEmployee" text="员工操作" float="true" pos="5,2,0,0" width="141" height="45" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" selected="true" />
+            <Option name="optGood" text="商品操作" float="true" pos="161,2,0,0" width="141" height="45" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" />
+        </HorizontalLayout>
+        <Combo name="comboGender" text="男" float="true" pos="143,99,0,0" width="100" height="37" itemtextcolor="#FF000000" itemselectedtextcolor="#FF000000" itemselectedbkcolor="#FFC1E3FF" itemhottextcolor="#FF000000" itemhotbkcolor="#FFE9F5FF" itemdisabledtextcolor="#FFCCCCCC" itemdisabledbkcolor="#FFFFFFFF" normalimage="combo控件.png" hotimage="combo控件.png" pushedimage="压下的combo控件.png" dropboxsize="0,150">
+        <ListLabelElement text="男" selected="true"/>
+	<ListLabelElement text="女" />
+        </Combo>
+        <Combo name="comboPosition" text="售货员" float="true" pos="380,99,0,0" width="100" height="37" itemtextcolor="#FF000000" itemselectedtextcolor="#FF000000" itemselectedbkcolor="#FFC1E3FF" itemhottextcolor="#FF000000" itemhotbkcolor="#FFE9F5FF" itemdisabledtextcolor="#FFCCCCCC" itemdisabledbkcolor="#FFFFFFFF" normalimage="combo控件.png" hotimage="combo控件.png" pushedimage="压下的combo控件.png" dropboxsize="0,150">
+   	<ListLabelElement text="售货员" selected="true"/>
+	<ListLabelElement text="管理员" />
+        </Combo>
+        <Combo name="comPosition" text="无" float="true" pos="797,99,0,0" width="100" height="37" itemtextcolor="#FF000000" itemselectedtextcolor="#FF000000" itemselectedbkcolor="#FFC1E3FF" itemhottextcolor="#FF000000" itemhotbkcolor="#FFE9F5FF" itemdisabledtextcolor="#FFCCCCCC" itemdisabledbkcolor="#FFFFFFFF" normalimage="combo控件.png" hotimage="combo控件.png" pushedimage="压下的combo控件.png" dropboxsize="0,150">
+	<ListLabelElement text="无" selected="true"/>
+	<ListLabelElement text="管理员" />
+	<ListLabelElement text="售货员" />
+        </Combo>
+        <Edit name="username" float="true" pos="17,99,0,0" width="100" height="37" bkcolor="#FFFFFFFF" textpadding="4,3,4,3" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" />
+        <Edit name="userbirthday" float="true" pos="256,99,0,0" width="100" height="37" bkcolor="#FFFFFFFF" textpadding="4,3,4,3" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" />
+        <Edit name="usertel" float="true" pos="507,99,0,0" width="100" height="37" bkcolor="#FFFFFFFF" textpadding="4,3,4,3" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" />
+        <Edit name="usersal" float="true" pos="646,99,0,0" width="100" height="37" bkcolor="#FFFFFFFF" textpadding="4,3,4,3" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" />
+        <Button name="btnSELECT" text="查询" float="true" pos="897,193,0,0" width="70" height="42" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" pushedimage="C:\Users\Austin_Yan\Desktop\小程序图标资源\按钮选中.png" />
+        <Button name="btnUPDATE" text="更新" float="true" pos="897,276,0,0" width="70" height="42" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" pushedimage="C:\Users\Austin_Yan\Desktop\小程序图标资源\按钮选中.png" />
+        <Button name="btnINSERT" text="插入" float="true" pos="897,377,0,0" width="70" height="42" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" pushedimage="C:\Users\Austin_Yan\Desktop\小程序图标资源\按钮选中.png" />
+        <Button name="btnDELETE" text="删除" float="true" pos="897,466,0,0" width="70" height="42" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" pushedimage="C:\Users\Austin_Yan\Desktop\小程序图标资源\按钮选中.png" />
+        <Button name="btnRECOED" text="销售记录" float="true" pos="897,553,0,0" width="70" height="42" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" pushedimage="C:\Users\Austin_Yan\Desktop\小程序图标资源\按钮选中.png" />
+        <List name="ListEmployeeInfo" float="true" itemalign="center" pos="18,153,0,0" width="835" height="461" bkcolor="#FFFFFFFF" itemtextcolor="#FF000000" itembkcolor="#FFE2DDDF" itemselectedtextcolor="#FF000000" itemselectedbkcolor="#FFC1E3FF" itemhottextcolor="#FF000000" itemhotbkcolor="#FFE9F5FF" itemdisabledtextcolor="#FFCCCCCC" itemdisabledbkcolor="#FFFFFFFF" headerbkimage="List/list_header_bg.png">
+            <ListHeader name="domain" bkimage="List/list_header_bg.png">
+                <ListHeaderItem name="Name" text="姓名" width="144" height="23" minwidth="16" textcolor="#FF000000" sepwidth="1" align="center" hotimage="List/list_header_hot.png" pushedimage="List/list_header_pushed.png" sepimage="List/list_header_sep.png" />
+                <ListHeaderItem name="Gender" text="性别" width="144" height="23" minwidth="16" textcolor="#FF000000" sepwidth="1" align="center" hotimage="List/list_header_hot.png" pushedimage="List/list_header_pushed.png" sepimage="List/list_header_sep.png" />
+                <ListHeaderItem name="Birthday" text="生日" width="144" height="23" minwidth="16" textcolor="#FF000000" sepwidth="1" align="center" hotimage="List/list_header_hot.png" pushedimage="List/list_header_pushed.png" sepimage="List/list_header_sep.png" />
+                <ListHeaderItem name="Position" text="职务" width="144" height="23" minwidth="16" textcolor="#FF000000" sepwidth="1" align="center" hotimage="List/list_header_hot.png" pushedimage="List/list_header_pushed.png" sepimage="List/list_header_sep.png" />
+                <ListHeaderItem name="Telphone" text="联系方式" width="144" height="23" minwidth="16" textcolor="#FF000000" sepwidth="1" align="center" hotimage="List/list_header_hot.png" pushedimage="List/list_header_pushed.png" sepimage="List/list_header_sep.png" />
+                <ListHeaderItem name="Salary" text="薪资" width="144" height="23" minwidth="16" textcolor="#FF000000" sepwidth="1" align="center" hotimage="List/list_header_hot.png" pushedimage="List/list_header_pushed.png" sepimage="List/list_header_sep.png" />
+            </ListHeader>
+        </List>
+    </VerticalLayout>
+</Window>
