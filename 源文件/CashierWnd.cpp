@@ -94,6 +94,10 @@ void CashierWnd::SelectGood()
 	CDuiString strGoodCount = (vRet[0][7]).c_str();
 	((CEditUI*)m_PaintManager.FindControl(_T("ediGoodCount")))->SetText(strGoodCount);
 
+	//+-控制的商品数量编辑框置零
+	CEditUI* pedCount = (CEditUI*)m_PaintManager.FindControl(_T("ediCount"));
+	pedCount->SetText(0);
+
 	//是否低于预警值,低于就报警
 	if (atoi(vRet[0][7].c_str()) < atoi(vRet[0][8].c_str()))
 	{
@@ -126,24 +130,33 @@ void CashierWnd::AddGoodCount()
 
 void CashierWnd::SubGoodCount()
 {
-	//库存加1
-	CEditUI* pEDGoodCount = (CEditUI*)m_PaintManager.FindControl(_T("ediGoodCount"));
-	CDuiString strGoodCount = pEDGoodCount->GetText();
-
-	int count = 0;
-	count = atoi(StringFromLPCTSTR(strGoodCount).c_str());
-	++count;
-	strGoodCount.Format(_T("%d"), count);
-	pEDGoodCount->SetText(strGoodCount);
-
-	//商品个数减1
 	CEditUI* pECount = (CEditUI*)m_PaintManager.FindControl(_T("ediCount"));
 	CDuiString strCount = pECount->GetText();
 
-	count = atoi(StringFromLPCTSTR(strCount).c_str());
-	--count;
-	strCount.Format(_T("%d"), count);
-	pECount->SetText(strCount);
+	if (atoi(StringFromLPCTSTR(strCount).c_str()) <= 0)
+	{
+		MessageBox(m_hWnd, _T("错误操作!"), _T("提示信息"), NULL);
+		m_PaintManager.FindControl(_T("ediCount"))->SetText(0);
+	}
+	else
+	{
+		//库存加1
+		CEditUI* pEDGoodCount = (CEditUI*)m_PaintManager.FindControl(_T("ediGoodCount"));
+		CDuiString strGoodCount = pEDGoodCount->GetText();
+
+		int count = 0;
+		count = atoi(StringFromLPCTSTR(strGoodCount).c_str());
+		++count;
+		strGoodCount.Format(_T("%d"), count);
+		pEDGoodCount->SetText(strGoodCount);
+
+
+		//商品个数减1
+		count = atoi(StringFromLPCTSTR(strCount).c_str());
+		--count;
+		strCount.Format(_T("%d"), count);
+		pECount->SetText(strCount);
+	}
 }
 
 void CashierWnd::InsertGood()
@@ -175,21 +188,34 @@ void CashierWnd::InsertGood()
 	CDuiString strPrice;
 	strPrice.Format(_T("%lf"), price);
 
-	//更新到list中
-	CListTextElementUI* pItem = new CListTextElementUI;
-	CListUI* pList = (CListUI*)m_PaintManager.FindControl(_T("ListGoodInfo"));
+	//库存小于当前商品数量,购买失败
+	CEditUI* pEDGoodCount = (CEditUI*)m_PaintManager.FindControl(_T("ediGoodCount"));
+	CDuiString strGoodCount = pEDGoodCount->GetText();
 
-	pList->Add(pItem);
-	pItem->SetText(0, strGoodname);
-	pItem->SetText(1, vRet[0][0].c_str());
-	pItem->SetText(2, strCount);
-	pItem->SetText(3, (vRet[0][1]).c_str());
-	pItem->SetText(4, strPrice);
+	if (atoi(StringFromLPCTSTR(strCount).c_str()) > atoi(StringFromLPCTSTR(strGoodCount).c_str()))
+	{
+		MessageBox(m_hWnd, _T("库存不足,购买失败!"), _T("提示信息"), NULL);
+		pECount->SetText(0);
+	}
+	else
+	{
 
-	//清空编辑框
-	m_PaintManager.FindControl(_T("ediGoodname"))->SetText("");
-	m_PaintManager.FindControl(_T("ediGoodCount"))->SetText("");
-	m_PaintManager.FindControl(_T("ediCount"))->SetText(0);
+		//更新到list中
+		CListTextElementUI* pItem = new CListTextElementUI;
+		CListUI* pList = (CListUI*)m_PaintManager.FindControl(_T("ListGoodInfo"));
+
+		pList->Add(pItem);
+		pItem->SetText(0, strGoodname);
+		pItem->SetText(1, vRet[0][0].c_str());
+		pItem->SetText(2, strCount);
+		pItem->SetText(3, (vRet[0][1]).c_str());
+		pItem->SetText(4, strPrice);
+
+		//清空编辑框
+		m_PaintManager.FindControl(_T("ediGoodname"))->SetText("");
+		m_PaintManager.FindControl(_T("ediGoodCount"))->SetText("");
+		m_PaintManager.FindControl(_T("ediCount"))->SetText(0);
+	}
 }
 
 void CashierWnd::Commit()
