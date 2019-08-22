@@ -69,51 +69,52 @@ void LoginWind::Login()
 	{
 		MessageBox(m_hWnd, _T("用户名不能为空!"), _T("提示信息"), IDOK);
 	}
-	if (strUserPassword.IsEmpty())
+	else if (strUserPassword.IsEmpty())
 	{
 		MessageBox(m_hWnd, _T("密码不能为空!"), _T("提示信息"), IDOK);
 	}
-
-	ShowWindow(false);
-	string username = StringFromLPCTSTR(strUsername.GetData());
-	string password = StringFromLPCTSTR(strUserPassword.GetData());
-
-	string que = "select * from employee where name = '"
-		+ username + "' and password = '"
-		+ password + "'";
-
-	//m_MySQL->ConnectMysql("localhost", "root", "123123", "supmarket");
-	MySQL mysql;
-	mysql.ConnectMysql("localhost", "root", "123123", "supmarket");
-
-	if (mysql.Check(que) == true)
-	{
-
-		//管理员
-		string que = "select position from employee where name ='" + username + "';";
-
-		vector<vector<string>> vRet = mysql.Select(que);
-
-		if (vRet[0][0]=="管理员")
-		{
-			MainWd mainWd;
-
-			mainWd.Create(NULL, _T("MainWind"), UI_WNDSTYLE_FRAME, WS_EX_WINDOWEDGE);
-			mainWd.CenterWindow();
-			mainWd.ShowModal();
-		}
-		//收银员
-		else
-		{
-			CashierWnd cashierWnd;
-
-			cashierWnd.Create(NULL, _T("CashierWnd"), UI_WNDSTYLE_FRAME, WS_EX_WINDOWEDGE);
-			cashierWnd.CenterWindow();
-			cashierWnd.ShowModal();
-		}
-	}
 	else
 	{
-		MessageBox(m_hWnd, _T("用户名或密码不存在!"), _T("提示信息"), NULL);
+		string username = StringFromLPCTSTR(strUsername.GetData());
+		string password = StringFromLPCTSTR(strUserPassword.GetData());
+
+		string que = "select * from employee where name = '"
+			+ username + "' and password = '"
+			+ password + "'";
+
+		//m_MySQL->ConnectMysql("localhost", "root", "123123", "supmarket");
+		MySQL mysql;
+		mysql.ConnectMysql("localhost", "root", "123123", "supmarket");
+
+		if (mysql.Check(que) == true)
+		{
+			ShowWindow(false);
+			//管理员
+			string que = "select position from employee where name ='" + username + "';";
+
+			vector<vector<string>> vRet = mysql.Select(que);
+
+			if (vRet[0][0] == "管理员")
+			{
+				MainWd mainWd;
+
+				mainWd.Create(NULL, _T("MainWind"), UI_WNDSTYLE_FRAME, WS_EX_WINDOWEDGE);
+				mainWd.CenterWindow();
+				mainWd.ShowModal();
+			}
+			//收银员
+			else
+			{
+				CashierWnd cashierWnd;
+
+				cashierWnd.Create(NULL, _T("CashierWnd"), UI_WNDSTYLE_FRAME, WS_EX_WINDOWEDGE);
+				cashierWnd.CenterWindow();
+				cashierWnd.ShowModal();
+			}
+		}
+		else
+		{
+			MessageBox(m_hWnd, _T("用户名或密码不存在!"), _T("提示信息"), NULL);
+		}
 	}
 }
