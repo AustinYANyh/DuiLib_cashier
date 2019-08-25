@@ -6,8 +6,8 @@
             <Button name="btnMin" float="true" pos="925,2,0,0" width="36" height="27" bkcolor="#FF00FFFF" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" normalimage="最小化.png" pushedimage="选中最小化.png" focusedimage="最小化.png" />
         </HorizontalLayout>
         <HorizontalLayout width="1001" height="49">
-            <Option name="optEmployee" text="员工操作" group="optMainwd" float="true" pos="5,2,0,0" width="141" height="45" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" selected="true" />
-            <Option name="optGood" text="商品操作" group="optMainwd" float="true" pos="161,2,0,0" width="141" height="45" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" />
+            <Option name="optEmployee" text="员工操作" group="optPage" selected="true" float="true" pos="5,2,0,0" width="141" height="45" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" selected="true" />
+            <Option name="optGood" text="商品操作" group="optPage" float="true" pos="161,2,0,0" width="141" height="45" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" />
         </HorizontalLayout>
         <Combo name="comboGender" text="男" float="true" pos="143,99,0,0" width="100" height="37" itemtextcolor="#FF000000" itemselectedtextcolor="#FF000000" itemselectedbkcolor="#FFC1E3FF" itemhottextcolor="#FF000000" itemhotbkcolor="#FFE9F5FF" itemdisabledtextcolor="#FFCCCCCC" itemdisabledbkcolor="#FFFFFFFF" normalimage="combo控件.png" hotimage="combo控件.png" pushedimage="压下的combo控件.png" dropboxsize="0,150">
         <ListLabelElement text="男" selected="true"/>
