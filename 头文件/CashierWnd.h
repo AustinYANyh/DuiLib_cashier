@@ -6,8 +6,10 @@
 class CashierWnd:public WindowImplBase
 {
 public:
-	CashierWnd();
-	~CashierWnd();
+	CashierWnd(MySQL* mysql) :_mysql(mysql)
+	{
+
+	}
 
 public:
 	void Notify(TNotifyUI& msg);
@@ -32,7 +34,7 @@ protected:
 
 	void Cancel();
 
-//public:
-//	MySQL* m_mysql;
+private:
+	MySQL* _mysql;
 };
 

@@ -4,10 +4,12 @@
 class LoginWind :public WindowImplBase
 {
 public:
+	LoginWind(MySQL* mysql = nullptr) :_mysql(mysql)
+	{
+
+	}
 
 	void Notify(TNotifyUI& msg);
-
-	MySQL* m_MySQL;
 
 	void Login();
 
@@ -18,4 +20,7 @@ protected:
 	virtual CDuiString GetSkinFile();
 
 	virtual LPCTSTR GetWindowClassName(void) const;
+
+private:
+	MySQL* _mysql;
 };
