@@ -26,7 +26,8 @@ void MainWd::Notify(TNotifyUI& msg)
 	{
 		if (msg.pSender->GetName() == _T("btnClose"))
 		{
-			Close();
+			//Close();
+			PostQuitMessage(0);
 		}
 		else if (msg.pSender->GetName() == _T("btnMin"))
 		{
@@ -45,18 +46,26 @@ void MainWd::Notify(TNotifyUI& msg)
 			MainWd::DeleteEmployee();
 		}
 	}
-	else if (msg.sType == _T("itemselect"))
+	else if (msg.sType == _T("selectchanged"))
 	{
-		if (msg.pSender->GetName() == _T("optEmployee"))
-		{
+#if 0
+		CDuiString    strName = msg.pSender->GetName();
+		CTabLayoutUI* pControl = static_cast<CTabLayoutUI*>(m_PaintManager.FindControl(_T("tabTest")));
 
-		}
-		else if (msg.pSender->GetName() == _T("optGood"))
+		if (strName == _T("optEmployee"))
 		{
-
+			pControl->SelectItem(0);
 		}
+		else if (strName == _T("optGood"))
+		{
+			pControl->SelectItem(1);
+		}
+#endif
 	}
+
+	__super::Notify(msg);
 }
+
 
 
 void MainWd::SelectEmployee()
@@ -143,6 +152,12 @@ void MainWd::SelectEmployee()
 		pData->SetText(4, strItem[6].c_str());
 		pData->SetText(5, strItem[7].c_str());
 	}
+
+	//查询结束后,清空所有编辑框
+	m_PaintManager.FindControl(_T("username"))->SetText("");
+	m_PaintManager.FindControl(_T("userbirthday"))->SetText("");
+	m_PaintManager.FindControl(_T("usertel"))->SetText("");
+	m_PaintManager.FindControl(_T("usersal"))->SetText("");
 }
 
 void MainWd::InsertEmployee()
